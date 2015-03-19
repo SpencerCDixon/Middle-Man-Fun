@@ -1,0 +1,79 @@
+.section {
+  height: 100vh;
+  text-align: center;
+}
+
+.section:before  {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.centered-content {
+  display: inline-block !important;
+  vertical-align: middle;
+  width: 60%;
+}
+
+.centered-content h1 {
+  text-align: center;
+  font-size: 3em;
+}
+.centered-content h3 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.first-section {
+  background-image: image-url("blackorchid.png");
+}
+
+/* .second-section { */
+  /* background-image: image-url("github-background.png"); */
+  /* h1 { */
+    /* margin: 0; */
+    /* } */
+/* } */
+
+.welcome, .welcome-content {
+  margin: 0;
+  color: white;
+  font-family: 'Signika', sans-serif;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      color: #FFBA00;
+
+    }
+  }
+}
+
+.separator {
+  text-align: center;
+  border: 3px solid #FFBA00;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  width: 100px;
+}
+
+.read-blog {
+  background-color: #FFBA00;
+  font-family: 'Signika', sans-serif;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 auto;
+  display: inline-block;
+  margin-top: 2em;
+  font-size: 1.5em;
+  &:hover {
+    color: white;
+  }
+}
+
+.call-to-action {
+  text-align: center;
+}
+
