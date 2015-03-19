@@ -5,6 +5,7 @@ per_page: 10
 
 <div class="section first-section">
   <div class="centered-content">
+    <img src="/images/spencer.png" id="spencer" class="animated fadeInDownBig spencer-image"/>
     <h1 class="welcome animated fadeInDownBig"> HI, I'M SPENCER. </h1>
     <hr class="separator">
 
@@ -14,30 +15,33 @@ per_page: 10
              <%= link_to 'and teach code.', "http://google.com" %>
 
     <div class="call-to-action">
-      <a href="#" class="read-blog">This is a button!<a>
+      <a href="#" class="read-blog">Read Blog<a>
     </div>
   </div>
 </div>
 
 
+<div class="blog-container">
+<article class="blog-posts type-system-geometric">
+  <% if paginate && num_pages > 1 %>
+    <p>Page <%= page_number %> of <%= num_pages %></p>
 
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
-
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
+    <% if prev_page %>
+      <p><%= link_to 'Previous page', prev_page %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
-<% end %>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
+  <% page_articles.each_with_index do |article, i| %>
+    <h2 class="blog-title"><%= link_to article.title, article %> <span class="blog-date"><%= article.date.strftime('%b %e') %></span></h2>
+    <!-- use article.summary(250) if you have Nokogiri available to show just
+         the first 250 characters -->
+    <%= article.body %>
   <% end %>
-<% end %>
+
+  <% if paginate %>
+    <% if next_page %>
+      <p><%= link_to 'Next page', next_page %></p>
+    <% end %>
+  <% end %>
+</article>
+</div>
